@@ -1,4 +1,6 @@
 import React from "react";
+import axios from'axios';
+
 import SearchForm from "../components/SearchForm";
 import ResultsContainer from "../components/ResultsContainer";
 import API from "../utils/API";
@@ -12,6 +14,12 @@ class Search extends React.Component {
         }
         this.handleSearchClick = this.handleSearchClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentDidMount(){
+        axios.get('/api/books/').then(res=>{
+            this.setState({bookData:res.data});
+        }).catch(err => console.log(err));
     }
 
     handleChange(event) {

@@ -5,6 +5,8 @@ import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import Nav from "./components/Nav";
 import Header from "./components/Header";
+// import ResultsContainer from "./components/ResultsContainer";
+// import SearchForm from "./componenents/SearchForm";
 
 class App extends Component {
   render() {
@@ -17,6 +19,8 @@ class App extends Component {
             <Route exact path="/" component={Search}/>
             <Route exact path="/saved" component={Saved}/>
           </Switch>
+        {/* <SearchForm /> */}
+        {/* <ResultsContainer /> */}
         </div>
       </Router>
     );
